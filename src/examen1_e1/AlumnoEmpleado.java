@@ -10,7 +10,6 @@ package examen1_e1;
  * @author estef
  */
 public class AlumnoEmpleado extends Persona implements Participante  {
-    private boolean CreditoActivo;
     private String Numero;
     private String Carrera;
     private String Sueldo;
@@ -29,5 +28,12 @@ public class AlumnoEmpleado extends Persona implements Participante  {
     @Override
     public String getCarrera(){
         return Carrera;
+    }
+    
+    public void setSueldo(String S){
+        Sueldo=S;
+    }
+    public String getSueldo(){
+        return Sueldo;
     }
 }

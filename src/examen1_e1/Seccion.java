@@ -14,8 +14,9 @@ import java.util.List;
 public class Seccion {
     private String Salon;
     private String Hora;
-    private String TotalAlumnos;
+    private int TotalAlumnos;
     private LineaAlumno[] LineaA;
+    private LineaAlumno oLinea;
     private int i;
     
     public Seccion(){
@@ -38,19 +39,44 @@ public class Seccion {
     public String getHora(){
         return Hora;
     }
-    
-   public void setTotalAlumnos(String t){
-       TotalAlumnos=t;
-   }
    
    
-   public String getTotalAlumnos(){
+   public int getTotalAlumnos(){
+       Total();
        return TotalAlumnos;
    } 
    
+   public void Total(){
+       TotalAlumnos=i;
+   }
+   public void Matricular(LineaAlumno L){
+       oLinea= new LineaAlumno();
+       oLinea=(LineaAlumno) L.clone();
+       LineaA[i]=oLinea;
+       i++;
+   }
    
-   public void FechaMatricula(String f){
-       LineaA[i].setFecha(f);
+   public void ObtenerDatos(int n){
+       if (n<=i && n>=0)
+       LineaA[n].getDatos();
+       System.out.println("Fecha: " + LineaA[n].getFecha());
        
    }
+   public void listarAlumnos(){
+       for (int j=0;j<=i;j++){
+           LineaA[j].getDatos();
+           System.out.println("Fecha: "+ LineaA[j].getFecha());
+       }
+   }
+   
+   public Object clone(){ 
+        Object obj= null;
+        try{
+            obj= super.clone();
+        }
+        catch(CloneNotSupportedException e){
+            System.out.println(" no se puede duplicar");
+        }
+        return obj;
+    }
 }

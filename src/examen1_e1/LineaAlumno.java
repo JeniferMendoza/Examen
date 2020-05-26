@@ -11,16 +11,27 @@ import java.util.Scanner;
  */
 public class LineaAlumno  {
     private String fecha;
-    private Persona Alum;
+    private Persona Alum ;
     private String op;
     Scanner sc=new Scanner(System.in);
     
     public LineaAlumno(){
+        if(op=="1"){
+            Alum= new Alumno();
+        }
+        else if(op=="2"){
+            Alum=new AlumnoEmpleado();
+        }
+        else
+            System.out.println("Digiste 1 o 2");
         
     }
     
     public void setFecha(String F){
         fecha=F;
+    }
+    public String getFecha(){
+        return fecha;
     }
     
     public void AgregarAlumno(Persona A){
@@ -34,8 +45,29 @@ public class LineaAlumno  {
             Alum=new AlumnoEmpleado();
             Alum=A;
         }
+        else
+            System.out.println("Digiste 1 o 2");
         
     }
+    public Object clone(){ 
+        Object obj= null;
+        try{
+            obj= super.clone();
+        }
+        catch(CloneNotSupportedException e){
+            System.out.println(" no se puede duplicar");
+        }
+        return obj;
+    }
     
+    
+    public void getDatos(){
+        if (op=="1"){
+            System.out.println("Alumno");
+        }
+        else
+            System.out.println("Alumno Empleado");
+        System.out.print("Nombre Completo: "+ Alum.getNombreCompleto());
+    }
 }
 

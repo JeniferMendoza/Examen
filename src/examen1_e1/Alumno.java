@@ -30,4 +30,11 @@ public class Alumno extends Persona implements Participante  {
     public String getCarrera(){
         return Carrera;
     }
+    
+    public void setCredito(boolean C){
+        CreditoActivo=C;
+    }
+    public boolean getCredito(){
+        return CreditoActivo;
+    }
 }
