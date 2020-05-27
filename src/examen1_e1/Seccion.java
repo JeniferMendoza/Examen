@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author estef
  */
-public class Seccion {
+public class Seccion implements Cloneable {
     private String Salon;
     private String Hora;
     private int TotalAlumnos;
@@ -49,6 +49,8 @@ public class Seccion {
    public void Total(){
        TotalAlumnos=i;
    }
+   
+   //Clona el objeto LineaAlumno para hacer la composicion
    public void Matricular(LineaAlumno L){
        oLinea= new LineaAlumno();
        oLinea=(LineaAlumno) L.clone();
@@ -56,16 +58,36 @@ public class Seccion {
        i++;
    }
    
+   //Muestra los datos de un alumno en particular
+   //el valor entero que esta comp parametro es la posicion en la que se encuentra el alumno
    public void ObtenerDatos(int n){
        if (n<=i && n>=0)
        LineaA[n].getDatos();
        System.out.println("Fecha: " + LineaA[n].getFecha());
        
    }
+   //Lista todos los alumnos de la seccion
+   //getDatos() imprime directamente los datos personales del alunmno
    public void listarAlumnos(){
-       for (int j=0;j<=i;j++){
+       for (int j=0;j<i;j++){
            LineaA[j].getDatos();
            System.out.println("Fecha: "+ LineaA[j].getFecha());
+       }
+   }
+   public void EliminarAlumno(int a){
+       LineaA[a]=null;
+       i--;
+       ordenar();
+       
+   }
+   //Ordena el arreglo cuando algun objeto lineaAlumno se ha eliminado
+   public void ordenar(){
+       int j=0;
+       while(j<=i){
+           if (LineaA[j]==null){
+               LineaA[j]=LineaA[j+1];
+           }
+           j++;
        }
    }
    
