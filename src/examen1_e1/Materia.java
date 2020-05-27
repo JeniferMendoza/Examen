@@ -12,13 +12,13 @@ package examen1_e1;
 public class Materia {
     private String Codigo;
     private String Nombre;
-    private Integer Creditos;
+    private int Creditos;
     private Seccion oSeccion;
     private Seccion[] LSeccion;
     private int i=0;
     
     public Materia(){
-        
+     LSeccion=new Seccion[3];   
     }
     
     public void setCodigo(String c){
@@ -39,31 +39,41 @@ public class Materia {
     public void setCreditos(Integer cr){
         Creditos=cr;
     }
-    public Integer getCreditos(){
+    public int getCreditos(){
         return Creditos;
     }
     
     public void Agregarseccion(Seccion s){
         oSeccion=new Seccion();
-        oSeccion=(Seccion)s.clone();
+        oSeccion=s;
         LSeccion[i]=oSeccion;
         i++;
     }
     
     public void ListarSecciones(){
-        for(int j=0;j<=i;j++){
-            System.out.println(j+1);
-        System.out.println(LSeccion[j].getHora());
-        System.out.println(LSeccion[j].getSalon());
-        System.out.println(LSeccion[j].getTotalAlumnos());
+        if(i<=0){
+            System.out.println("NO HAY SECCIONES");
+        }
+        else{
+        System.out.println(getNombre());
+        for(int j=0;j<i;j++){
+        System.out.print((j+1) + " ");
+        System.out.print("Hora: " + LSeccion[j].getHora());
+        System.out.print(" Salon: " + LSeccion[j].getSalon());
+        System.out.println(" Total Alumos: " + LSeccion[j].getTotalAlumnos());
+        }
         }
     }
     
     public void listarDatosSeccion(int n){
         System.out.println("Hora: "+LSeccion[n].getHora());
         System.out.println("Salon: "+LSeccion[n].getSalon());
-        System.out.println(LSeccion[n].getTotalAlumnos());
+        System.out.println("Total Alumnos: " + LSeccion[n].getTotalAlumnos());
         System.out.println("Lista de Alumnos: ");
         LSeccion[n].listarAlumnos();
+    }
+    public void BorrarSeccion(int a){
+        LSeccion[a]=null;
+        i--;
     }
 }
