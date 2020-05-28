@@ -45,17 +45,12 @@ public class Examen1_E2 {
         oMateria.setCodigo("IS410");
         oMateria.setCreditos(20);
         oMateria.Agregarseccion(oSeccion);
-        
-        //oMateria.listarDatosSeccion(0);
-        //oMateria.ListarSecciones();
-        //oSeccion.ObtenerDatos(0);
-        //oSeccion.listarAlumnos();
-        
+
         oAlumnoE = new AlumnoEmpleado();
         oAlumnoE.setNombreCompleto("Daniel C");
-        oAlumnoE.setId("0801");
-        oAlumnoE.setDireccion("Tegucigalpa");
-        oAlumnoE.setNumeroCuenta("201...");
+        oAlumnoE.setId("1214");
+        oAlumnoE.setDireccion("Intibuca");
+        oAlumnoE.setNumeroCuenta("2014...");
         oAlumnoE.setCarrera("IS");
         oAlumnoE.setSueldo("23000");
         
@@ -63,8 +58,7 @@ public class Examen1_E2 {
         oLinea.AgregarAlumnoEmpleado(oAlumnoE);
         oLinea.setFecha("AYER");
         oSeccion.Matricular(oLinea);
-        
-        //oSeccion.listarAlumnos();
+
         oSeccion.ObtenerDatos(0);
         
     }

@@ -46,7 +46,7 @@ public class LineaAlumno implements Cloneable  {
             obj= super.clone();
         }
         catch(CloneNotSupportedException e){
-            System.out.println(" no se puede duplicar");
+            System.out.println(" No se puede duplicar");
         }
         return obj;
     }
