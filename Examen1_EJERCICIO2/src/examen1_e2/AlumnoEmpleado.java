@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package examen1_e1;
+package examen1_e2;
 
 /**
  *
  * @author estef
  */
 public class AlumnoEmpleado extends Participante  {
+    //HEREDA DE LA CLASE PARTICIPANTE
+    //Y AL MISMO TIEMPO DE LA CLASE PERSONA YA QUE PARTICIPANTE HEREDA DE ELLA.
     private String Numero;
     private String Carrera;
     private String Sueldo;

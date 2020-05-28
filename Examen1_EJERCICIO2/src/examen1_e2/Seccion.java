@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package examen1_e1;
+package examen1_e2;
 
 import java.util.List;
 
@@ -72,6 +72,23 @@ public class Seccion implements Cloneable {
        for (int j=0;j<i;j++){
            LineaA[j].getDatos();
            System.out.println("Fecha: "+ LineaA[j].getFecha());
+       }
+   }
+   
+   public void EliminarAlumno(int a){
+       LineaA[a]=null;
+       i--;
+       ordenar();
+       
+   }
+   //Ordena el arreglo cuando algun objeto lineaAlumno se ha eliminado
+   public void ordenar(){
+       int j=0;
+       while(j<=i){
+           if (LineaA[j]==null){
+               LineaA[j]=LineaA[j+1];
+           }
+           j++;
        }
    }
    

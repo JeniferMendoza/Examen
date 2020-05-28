@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package examen1_e1;
+package examen1_e2;
 
 
 public class Alumno extends Participante  {
+    //HEREDA DE LA CLASE PARTICIPANTE
+    //Y AL MISMO TIEMPO DE LA CLASE PERSONA YA QUE PARTICIPANTE HEREDA DE ELLA.
     private boolean CreditoActivo;
     private String Numero;
     private String Carrera;

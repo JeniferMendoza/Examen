@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package examen1_e1;
+package examen1_e2;
 
 /**
  *
  * @author estef
  */
 public abstract class Participante extends Persona{
+    //SE CONVIERTE EN UNA CLASE ABSTRACTA
+    //HEREDANDO DE LA CLASE PERSONA
     private String Numero;
     private String Carrera;
     
