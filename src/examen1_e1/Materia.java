@@ -10,8 +10,8 @@ package examen1_e1;
  * @author estef
  */
 public class Materia {
-    //Atributos Privados
-    private String Codigo;
+    //Atributos 
+   private String Codigo;
     private String Nombre;
     private int Creditos;
     private Seccion oSeccion;

@@ -34,7 +34,7 @@ public class Examen1_E1 {
         
         oLinea=new LineaAlumno();
         oLinea.AgregarAlumno(oAlumno);
-        oLinea.setFecha("HOY");
+        oLinea.setFecha("27/5/20");
         
         oSeccion=new Seccion();
         oSeccion.Matricular(oLinea);
@@ -49,8 +49,8 @@ public class Examen1_E1 {
         oMateria.Agregarseccion(oSeccion);
         
         oAlumnoE = new AlumnoEmpleado();
-        oAlumnoE.setNombreCompleto("Daniel C");
-        oAlumnoE.setId("0801");
+        oAlumnoE.setNombreCompleto("Daniel CH");
+        oAlumnoE.setId("1214100");
         oAlumnoE.setDireccion("Tegucigalpa");
         oAlumnoE.setNumeroCuenta("201...");
         oAlumnoE.setCarrera("IS");

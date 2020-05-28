@@ -9,21 +9,15 @@ import java.util.Scanner;
  *
  * @author estef
  */
-public class LineaAlumno  {
+public class LineaAlumno implements Cloneable  {
     private String fecha;
-    private Persona Alum ;
-    private String op;
+    private Persona oAlum;
+    private Alumno Alum;
+    private AlumnoEmpleado AlumE;
+    private int op;
     Scanner sc=new Scanner(System.in);
     
     public LineaAlumno(){
-        if(op=="1"){
-            Alum= new Alumno();
-        }
-        else if(op=="2"){
-            Alum=new AlumnoEmpleado();
-        }
-        else
-            System.out.println("Digiste 1 o 2");
         
     }
     
@@ -33,22 +27,19 @@ public class LineaAlumno  {
     public String getFecha(){
         return fecha;
     }
-    
-    public void AgregarAlumno(Persona A){
-        System.out.println("1. ALUMNO EMPLEADO  2. ALUMNO EMPLEADO");
-        op=sc.next();
-        if(op=="1"){
+     //Instancia un Objeto Alumno
+    public void AgregarAlumno(Alumno A){
             Alum= new Alumno();
             Alum=A;
-        }
-        else if(op=="2"){
-            Alum=new AlumnoEmpleado();
-            Alum=A;
-        }
-        else
-            System.out.println("Digiste 1 o 2");
-        
+        op=1;
     }
+    //Instancia un Objeto AlumnoEmpleado
+    public void AgregarAlumnoEmpleado(AlumnoEmpleado A){
+            AlumE=new AlumnoEmpleado();
+            AlumE=A;
+            op=2;
+    }
+    
     public Object clone(){ 
         Object obj= null;
         try{
@@ -60,14 +51,24 @@ public class LineaAlumno  {
         return obj;
     }
     
-    
+    //Imprime todos los datos de Alumno
     public void getDatos(){
-        if (op=="1"){
-            System.out.println("Alumno");
+        //Si OP=1 El Alumno no es emplado
+        
+        if (op==1){
+            System.out.println("Alumno_ ");
+        System.out.println("Nombre Completo: "+ Alum.getNombreCompleto()+" ");
+        System.out.println("No Cuenta:"+ Alum.getNumeroCuenta());
+        System.out.println("Carrera: "+ Alum.getCarrera());
+        System.out.println("Credito: " + Alum.getCredito());
         }
-        else
-            System.out.println("Alumno Empleado");
-        System.out.print("Nombre Completo: "+ Alum.getNombreCompleto());
+        else{
+            System.out.println("Alumno Empleado_ ");
+            System.out.println("Nombre Completo: "+ AlumE.getNombreCompleto()+" ");
+            System.out.println("No Cuenta:"+ AlumE.getNumeroCuenta());
+            System.out.println("Carrera: "+ AlumE.getCarrera());
+            System.out.println("Sueldo: "+ AlumE.getSueldo());
     }
+}
 }
 
