@@ -10,6 +10,7 @@ package examen1_e1;
  * @author estef
  */
 public class Persona {
+    //Atributos
     private String NombreCompleto;
     private String Direccion;
     private String id;

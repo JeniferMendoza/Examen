@@ -9,6 +9,7 @@ package examen1_e1;
  *
  * @author estef
  */
+//Implementacion de Herencia e Interfaz 
 public class AlumnoEmpleado extends Persona implements Participante  {
     private String Numero;
     private String Carrera;

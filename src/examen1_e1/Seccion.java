@@ -5,13 +5,14 @@
  */
 package examen1_e1;
 
-import java.util.List;
+//import java.util.List;
 
 /**
  *
  * @author estef
  */
 public class Seccion {
+    //ATRIBUTOS 
     private String Salon;
     private String Hora;
     private int TotalAlumnos;

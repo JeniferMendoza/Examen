@@ -9,6 +9,7 @@ package examen1_e1;
  *
  * @author estef
  */
+//INTERFACE
 public interface Participante {
     void setNumeroCuenta(String n);
     String getNumeroCuenta();
