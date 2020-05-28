@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package examen1_e1;
+package examen1_e2;
 
 /**
  *
@@ -67,4 +67,21 @@ public class Materia {
         System.out.println("Lista de Alumnos: ");
         LSeccion[n].listarAlumnos();
     }
+    
+    public void BorrarSeccion(int a){
+        LSeccion[a]=null;
+        i--;
+        ordenar();
+    }
+    
+    //Ordena el Arreglo Seccion cuando algun objeto seccio sea eliminado
+    public void ordenar(){
+       int j=0;
+       while(j<=i){
+           if (LSeccion[j]==null){
+               LSeccion[j]=LSeccion[j+1];
+           }
+           j++;
+       }
+   }
 }
